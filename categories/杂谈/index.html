@@ -87,7 +87,7 @@
 <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ethan's Blog">
-<meta property="og:url" content="http://ethanwanggg.github.io/index.html">
+<meta property="og:url" content="http://ethanwanggg.github.io/categories/杂谈/index.html">
 <meta property="og:site_name" content="Ethan's Blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -109,7 +109,7 @@
     }
   };
 </script>
-  <title> Ethan's Blog </title>
+  <title> 分类: 杂谈 | Ethan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -130,9 +130,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,246 +240,40 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/16/浅谈设计模式/" itemprop="url">
-                  浅谈设计模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-16T11:00:30+08:00" content="2016-06-16">
-              2016-06-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/16/浅谈设计模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/16/浅谈设计模式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>从学习软件开发开始，我们一直在讨论的就是程序设计模式。常用的有<strong>MVC</strong> 、<strong>MVP</strong> 、<strong>MVVM</strong> ，今天想把这几个模式拿出来说一说。</p>
-<h1 id="1-MVC"><a href="#1-MVC" class="headerlink" title="1.MVC:"></a>1.MVC:</h1><ul>
-<li>模型（Model）：数据存储传递</li>
-<li>视图（View）：界面UI部分</li>
-<li>控制器（Controller）：</li>
-</ul>
-<blockquote>
-<p>执行流程：<br>1.View与用户交互，将动作传递给Controller<br>2.Controller调用Model进行数据请求<br>3.服务端返回处理结果后，Model通知View<br>4.View进行画面处理</p>
-</blockquote>
-<p> 缺点：Controller不知道任何View的细节，一个Controller能被多个View使用，很难对Controller进行单元测试，Controller操作数据，但是如何从View上断言这些数据的变化呢？</p>
-<p><img src="/images/浅谈设计模式/MVC.png" alt="MVC" title="MVC"></p>
-<h1 id="2-MVP"><a href="#2-MVP" class="headerlink" title="2.MVP:"></a>2.MVP:</h1><p>MVP模式中将Controller 替换为Presenter，彻底的分离了View 与Model 的关联。Presenter 做业务逻辑，View 与 Model 不发生联系，都通过 Presenter 传递。</p>
-<blockquote>
-<p>执行流程<br>1.View与用户交互，将动作转交给Presenter。<br>2.Presenter操作Model进行数据请求。<br>3.Model通知Presenter数据变化。<br>4.Presenter更新View的变化。</p>
-</blockquote>
-<p>优点：<br>1.模型与视图的彻底分离，修改视图不再影响模型。<br>2.Presenter可应用于多个视图。<br>3.方便协作，UI与后台借口测试互不干涉</p>
-<p>缺点：<br>1.类数量爆炸，代码复杂学习成本高。<br>2.视图的渲染在Presenter中，Presenter与视图的关系过于紧密，可能导致视图变化连带着Presenter也要变化。</p>
-<p><img src="/images/浅谈设计模式/MVP.png" alt="MVP" title="MVP"></p>
-<h1 id="3-MVVM"><a href="#3-MVVM" class="headerlink" title="3.MVVM:"></a>3.MVVM:</h1><p>MVVM是在Model的基础上添加一个ViewModel，这个ViewModel除了正常的属性意外，还包括一些供View显示用的属性。Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致，只是将Presenter 与View 调整为了双向绑定。</p>
-<p><img src="/images/浅谈设计模式/MVVM.png" alt="MVVM" title="MVVM"></p>
-<hr>
-
-          
-        
-      
+  <section id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        杂谈
+        <small>分类</small>
+      </h2>
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
       
 
-  
-  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/06/16/浅谈设计模式/" itemprop="url">
               
-                
-                <a class="post-title-link" href="/2016/05/19/hello-world/" itemprop="url">
-                  博客开张咯
-                </a>
+                <span itemprop="name">浅谈设计模式</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-19T15:07:24+08:00" content="2016-05-19">
-              2016-05-19
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-06-16T11:00:30+08:00"
+              content="2016-06-16" >
+          06-16
+        </time>
+      </div>
 
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/19/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/19/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一直有写博客的想法，百般折腾，终于在今天开通了！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
@@ -489,6 +281,7 @@
   </section>
 
   
+
 
 
           </div>
