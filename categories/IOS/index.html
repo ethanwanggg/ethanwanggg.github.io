@@ -84,31 +84,15 @@
 
 
 
-<meta name="description" content="adb start-server启动adb服务,如果它没启动的话
-adb kill-server关闭服务
-
-adb devices查看所连接的设备以及设备所对应的序列号
-adb install -r xxxx.apk安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s 来处理
-adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据清理不">
-<meta property="og:type" content="article">
-<meta property="og:title" content="android adb 常用命令收集">
-<meta property="og:url" content="http://ethanwanggg.github.io/2016/07/07/android-adb-常用命令收集/index.html">
+<meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ethan's Blog">
+<meta property="og:url" content="http://ethanwanggg.github.io/categories/IOS/index.html">
 <meta property="og:site_name" content="Ethan's Blog">
-<meta property="og:description" content="adb start-server启动adb服务,如果它没启动的话
-adb kill-server关闭服务
-
-adb devices查看所连接的设备以及设备所对应的序列号
-adb install -r xxxx.apk安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s 来处理
-adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据清理不">
-<meta property="og:updated_time" content="2016-07-21T08:33:33.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android adb 常用命令收集">
-<meta name="twitter:description" content="adb start-server启动adb服务,如果它没启动的话
-adb kill-server关闭服务
-
-adb devices查看所连接的设备以及设备所对应的序列号
-adb install -r xxxx.apk安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s 来处理
-adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据清理不">
+<meta name="twitter:title" content="Ethan's Blog">
+<meta name="twitter:description">
 
 
 
@@ -125,7 +109,7 @@ adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据
     }
   };
 </script>
-  <title> android adb 常用命令收集 | Ethan's Blog </title>
+  <title> 分类: IOS | Ethan's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +130,7 @@ adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据
     
   
 
-  <div class="container one-collumn sidebar-position-right page-post-detail ">
+  <div class="container one-collumn sidebar-position-right  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,171 +251,47 @@ adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                android adb 常用命令收集
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-07T16:23:02+08:00" content="2016-07-07">
-              2016-07-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/07/android-adb-常用命令收集/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/07/android-adb-常用命令收集/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <hr>
-<p><code>adb start-server</code><br>启动adb服务,如果它没启动的话</p>
-<h3 id="adb-kill-server"><a href="#adb-kill-server" class="headerlink" title="adb kill-server"></a>adb kill-server</h3><p>关闭服务</p>
-<ul>
-<li>adb devices<br>查看所连接的设备以及设备所对应的序列号</li>
-<li>adb install -r xxxx.apk<br>安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s <serialnumber>来处理</serialnumber></li>
-<li>adb uninstall packagename<br>卸载app,有时候在手机上卸载App会出现数据清理不干净,导致App再也装不上了,这个时候可以敲命令来卸载</li>
-<li>adb shell<br>进入shell环境</li>
-<li>adb shell pm clear packagename<br>清除应用的数据,很常用吧?</li>
-<li>adb shell am start -n packagename/packagename.activityname<br>启动某个应用的某个Activity(以前调试老年机,那种Launcher上没有APP的机器,全靠它啊!!!!!!!)</li>
-<li>adb connect <device-ip-address><br>连接到指定的ip,这个通常配合wifidebug</device-ip-address></li>
-<li>adb shell dumpsys activity top<br>查看栈顶Activity,可以用来获取包名,可以用来查看其它app的包名</li>
-<li>adb shell ps<br>查看进程信息</li>
-<li>adb shell pm list packages -f<br>查看所有已安装的应用的包名</li>
-<li>adb shell dumpsys activity<br>dumpsys系列命令可以帮助我们查看各种信息<br>am的状态 Activity Manager State</li>
-<li>adb shell dumpsys package<br>包信息 Package Information</li>
-<li>adb shell dumpsys meminfo<br>内存使用情况Memory Usage</li>
-<li>adb pull <remote> <local><br>从手机复制文件出来,比如把Crash日志写在SD卡上,再pull到电脑上 或者 pull ANR的trace日志</local></remote></li>
-<li>adb push <local> <remote><br>向手机发送文件,比如测试热修复补丁~<br>eg. adb push foo.txt /sdcard/foo.txt</remote></local></li>
-<li>adb shell cat /proc/cpuinfo<br>查看手机CPU,可以看到手机架构(eg.ARMv7) 和几核处理器<br>可以帮助我们选择so库,排查手机cpu架构相关的问题</li>
-<li>adb shell df<br>获取手机磁盘空间</li>
-<li>adb shell getprop ro.build.version.release<br>获取手机系统版本</li>
-<li>adb shell dumpsys procstats<br>Memory Use Over Time</li>
-<li>adb shell dumpsys gfxinfo<br>Graphics State</li>
-<li>adb version<br>查看adb版本</li>
-<li>adb help<br>进入adb帮助界面</li>
-</ul>
-
-      
+  <section id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        IOS
+        <small>分类</small>
+      </h2>
     </div>
 
-    <div>
+    
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-      
-    </div>
-
-    <div>
-      
+            <a class="post-title-link" href="/2016/07/21/IOS-Swift-使用-cocopods步骤/" itemprop="url">
+              
+                <span itemprop="name">IOS Swift 使用 cocopods步骤</span>
+              
+            </a>
         
+      </h1>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-07-21T16:41:26+08:00"
+              content="2016-07-21" >
+          07-21
+        </time>
+      </div>
 
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/16/浅谈设计模式/" rel="next" title="浅谈设计模式">
-                <i class="fa fa-chevron-left"></i> 浅谈设计模式
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/21/IOS-Swift-使用-cocopods步骤/" rel="prev" title="IOS Swift 使用 cocopods步骤">
-                IOS Swift 使用 cocopods步骤 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+
 
 
           </div>
@@ -439,25 +299,6 @@ adb uninstall packagename卸载app,有时候在手机上卸载App会出现数据
 
 
           
-  <div class="comments" id="comments">
-    <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2016/07/07/android-adb-常用命令收集/" data-title="android adb 常用命令收集" data-url="http://ethanwanggg.github.io/2016/07/07/android-adb-常用命令收集/"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"ethanwang"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-     || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-  </script>
-<!-- 多说公共JS代码 end -->
-  </div>
-
 
         </div>
         
@@ -477,17 +318,8 @@ var duoshuoQuery = {short_name:"ethanwang"};
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
@@ -537,17 +369,6 @@ var duoshuoQuery = {short_name:"ethanwang"};
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#adb-kill-server"><span class="nav-number">1.</span> <span class="nav-text">adb kill-server</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -647,10 +468,6 @@ document.write(unescape("%3Cspan id='cnzz_stat_icon_1259218317'%3E%3C/span%3E%3C
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
