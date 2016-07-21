@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title><![CDATA[android adb 常用命令收集]]></title>
+      <url>http://ethanwanggg.github.io/2016/07/07/android-adb-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/</url>
+      <content type="html"><![CDATA[<hr>
+<ul>
+<li>adb start-server<br>启动adb服务,如果它没启动的话</li>
+<li>adb kill-server<br>关闭服务</li>
+<li>adb devices<br>查看所连接的设备以及设备所对应的序列号</li>
+<li>adb install -r xxxx.apk<br>安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s <serialnumber>来处理</serialnumber></li>
+<li>adb uninstall packagename<br>卸载app,有时候在手机上卸载App会出现数据清理不干净,导致App再也装不上了,这个时候可以敲命令来卸载</li>
+<li>adb shell<br>进入shell环境</li>
+<li>adb shell pm clear packagename<br>清除应用的数据,很常用吧?</li>
+<li>adb shell am start -n packagename/packagename.activityname<br>启动某个应用的某个Activity(以前调试老年机,那种Launcher上没有APP的机器,全靠它啊!!!!!!!)</li>
+<li>adb connect <device-ip-address><br>连接到指定的ip,这个通常配合wifidebug</device-ip-address></li>
+<li>adb shell dumpsys activity top<br>查看栈顶Activity,可以用来获取包名,可以用来查看其它app的包名</li>
+<li>adb shell ps<br>查看进程信息</li>
+<li>adb shell pm list packages -f<br>查看所有已安装的应用的包名</li>
+<li>adb shell dumpsys activity<br>dumpsys系列命令可以帮助我们查看各种信息<br>am的状态 Activity Manager State</li>
+<li>adb shell dumpsys package<br>包信息 Package Information</li>
+<li>adb shell dumpsys meminfo<br>内存使用情况Memory Usage</li>
+<li>adb pull <remote> <local><br>从手机复制文件出来,比如把Crash日志写在SD卡上,再pull到电脑上 或者 pull ANR的trace日志</local></remote></li>
+<li>adb push <local> <remote><br>向手机发送文件,比如测试热修复补丁~<br>eg. adb push foo.txt /sdcard/foo.txt</remote></local></li>
+<li>adb shell cat /proc/cpuinfo<br>查看手机CPU,可以看到手机架构(eg.ARMv7) 和几核处理器<br>可以帮助我们选择so库,排查手机cpu架构相关的问题</li>
+<li>adb shell df<br>获取手机磁盘空间</li>
+<li>adb shell getprop ro.build.version.release<br>获取手机系统版本</li>
+<li>adb shell dumpsys procstats<br>Memory Use Over Time</li>
+<li>adb shell dumpsys gfxinfo<br>Graphics State</li>
+<li>adb version<br>查看adb版本</li>
+<li>adb help<br>进入adb帮助界面</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[浅谈设计模式]]></title>
       <url>http://ethanwanggg.github.io/2016/06/16/%E6%B5%85%E8%B0%88%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<hr>
