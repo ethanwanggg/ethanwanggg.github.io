@@ -4,6 +4,18 @@
   
     
     <entry>
+      <title><![CDATA[Mac 系统显示隐藏文件]]></title>
+      <url>http://ethanwanggg.github.io/2016/07/22/Mac-%E7%B3%BB%E7%BB%9F%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>打开终端，输入：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles -bool true</span><br></pre></td></tr></table></figure>
+<p>此命令显示隐藏文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles -bool false</span><br></pre></td></tr></table></figure>
+<p> 此命令关闭显示隐藏文件</p>
+<p>命令运行之后需要重新加载Finder：快捷键option+command+esc，选中Finder，重新启动即可。也可以从左上角苹果图标选择强制退出&gt;选中Finder，重新启动。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[IOS Swift 使用 cocopods步骤]]></title>
       <url>http://ethanwanggg.github.io/2016/07/21/IOS-Swift-%E4%BD%BF%E7%94%A8-cocopods%E6%AD%A5%E9%AA%A4/</url>
       <content type="html"><![CDATA[<p>首先你要关掉Xcode，打开终端，用 cd 命令进入包含你项目的那个目录下：cd ~/Path/To/Folder/Containing/TestPeoject</p>
