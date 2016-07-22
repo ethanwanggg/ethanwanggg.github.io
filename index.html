@@ -471,23 +471,13 @@
       
         
           <hr>
-<ul>
-<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">start</span>-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">start</span>-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
 <p>启动adb服务,如果它没启动的话</p>
-</li>
-</ul>
-<ul>
-<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>​    关闭服务</p>
-<ul>
-<li><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">adb</span> devices</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>关闭服务</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">adb</span> devices</span><br></pre></td></tr></table></figure>
 <p>查看所连接的设备以及设备所对应的序列号</p>
-</li>
-</ul>
-<ul>
-<li><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">install</span> -r xxxx.apk</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">install</span> -r xxxx.apk</span><br></pre></td></tr></table></figure>
 <p>安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s <serialNumber>来处理</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/07/android-adb-常用命令收集/#more" rel="contents">
