@@ -11,6 +11,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod init</span><br></pre></td></tr></table></figure>
 <p>这将为你的项目创建一个PodFile</p>
 <p>输入下面的命令行打开PodFile，并使用Xcode进行编辑：</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Xcode Podfile</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong>你不能使用TextEdit来编辑Podfile，因为它有可能用图形化的更有吸引力的typeset quotes代替standard quotes，这可能导致CocoaPods不能理解并抛出错误，所以最好用Xcode或者别的编程文本编辑器来编辑你的Podfile。</p>
 <p>默认的podFile看起来是这样的：</p>
@@ -47,30 +48,54 @@
       <url>http://ethanwanggg.github.io/2016/07/07/android-adb-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/</url>
       <content type="html"><![CDATA[<hr>
 <p><code>adb start-server</code><br>启动adb服务,如果它没启动的话</p>
-<h3 id="adb-kill-server"><a href="#adb-kill-server" class="headerlink" title="adb kill-server"></a>adb kill-server</h3><p>关闭服务</p>
+<p>adb kill-server</p>
+<p>关闭服务</p>
 <ul>
-<li>adb devices<br>查看所连接的设备以及设备所对应的序列号</li>
-<li>adb install -r xxxx.apk<br>安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s <serialnumber>来处理</serialnumber></li>
-<li>adb uninstall packagename<br>卸载app,有时候在手机上卸载App会出现数据清理不干净,导致App再也装不上了,这个时候可以敲命令来卸载</li>
-<li>adb shell<br>进入shell环境</li>
-<li>adb shell pm clear packagename<br>清除应用的数据,很常用吧?</li>
-<li>adb shell am start -n packagename/packagename.activityname<br>启动某个应用的某个Activity(以前调试老年机,那种Launcher上没有APP的机器,全靠它啊!!!!!!!)</li>
-<li>adb connect <device-ip-address><br>连接到指定的ip,这个通常配合wifidebug</device-ip-address></li>
-<li>adb shell dumpsys activity top<br>查看栈顶Activity,可以用来获取包名,可以用来查看其它app的包名</li>
-<li>adb shell ps<br>查看进程信息</li>
-<li>adb shell pm list packages -f<br>查看所有已安装的应用的包名</li>
-<li>adb shell dumpsys activity<br>dumpsys系列命令可以帮助我们查看各种信息<br>am的状态 Activity Manager State</li>
-<li>adb shell dumpsys package<br>包信息 Package Information</li>
-<li>adb shell dumpsys meminfo<br>内存使用情况Memory Usage</li>
-<li>adb pull <remote> <local><br>从手机复制文件出来,比如把Crash日志写在SD卡上,再pull到电脑上 或者 pull ANR的trace日志</local></remote></li>
-<li>adb push <local> <remote><br>向手机发送文件,比如测试热修复补丁~<br>eg. adb push foo.txt /sdcard/foo.txt</remote></local></li>
-<li>adb shell cat /proc/cpuinfo<br>查看手机CPU,可以看到手机架构(eg.ARMv7) 和几核处理器<br>可以帮助我们选择so库,排查手机cpu架构相关的问题</li>
-<li>adb shell df<br>获取手机磁盘空间</li>
-<li>adb shell getprop ro.build.version.release<br>获取手机系统版本</li>
-<li>adb shell dumpsys procstats<br>Memory Use Over Time</li>
-<li>adb shell dumpsys gfxinfo<br>Graphics State</li>
-<li>adb version<br>查看adb版本</li>
-<li>adb help<br>进入adb帮助界面</li>
+<li><p>adb devices<br>查看所连接的设备以及设备所对应的序列号</p>
+</li>
+<li><p>adb install -r xxxx.apk<br>安装app,需要注意的是如果连接了两台设备,则会报错,此时可以添加-s <serialnumber>来处理</serialnumber></p>
+</li>
+<li><p>adb uninstall packagename<br>卸载app,有时候在手机上卸载App会出现数据清理不干净,导致App再也装不上了,这个时候可以敲命令来卸载</p>
+</li>
+<li><p>adb shell<br>进入shell环境</p>
+<a id="more"></a>
+</li>
+<li><p>adb shell pm clear packagename<br>清除应用的数据,很常用吧?</p>
+</li>
+<li><p>adb shell am start -n packagename/packagename.activityname<br>启动某个应用的某个Activity(以前调试老年机,那种Launcher上没有APP的机器,全靠它啊!!!!!!!)</p>
+</li>
+<li><p>adb connect <device-ip-address><br>连接到指定的ip,这个通常配合wifidebug</device-ip-address></p>
+</li>
+<li><p>adb shell dumpsys activity top<br>查看栈顶Activity,可以用来获取包名,可以用来查看其它app的包名</p>
+</li>
+<li><p>adb shell ps<br>查看进程信息</p>
+</li>
+<li><p>adb shell pm list packages -f<br>查看所有已安装的应用的包名</p>
+</li>
+<li><p>adb shell dumpsys activity<br>dumpsys系列命令可以帮助我们查看各种信息<br>am的状态 Activity Manager State</p>
+</li>
+<li><p>adb shell dumpsys package<br>包信息 Package Information</p>
+</li>
+<li><p>adb shell dumpsys meminfo<br>内存使用情况Memory Usage</p>
+</li>
+<li><p>adb pull <remote> <local><br>从手机复制文件出来,比如把Crash日志写在SD卡上,再pull到电脑上 或者 pull ANR的trace日志</local></remote></p>
+</li>
+<li><p>adb push <local> <remote><br>向手机发送文件,比如测试热修复补丁~<br>eg. adb push foo.txt /sdcard/foo.txt</remote></local></p>
+</li>
+<li><p>adb shell cat /proc/cpuinfo<br>查看手机CPU,可以看到手机架构(eg.ARMv7) 和几核处理器<br>可以帮助我们选择so库,排查手机cpu架构相关的问题</p>
+</li>
+<li><p>adb shell df<br>获取手机磁盘空间</p>
+</li>
+<li><p>adb shell getprop ro.build.version.release<br>获取手机系统版本</p>
+</li>
+<li><p>adb shell dumpsys procstats<br>Memory Use Over Time</p>
+</li>
+<li><p>adb shell dumpsys gfxinfo<br>Graphics State</p>
+</li>
+<li><p>adb version<br>查看adb版本</p>
+</li>
+<li><p>adb help<br>进入adb帮助界面</p>
+</li>
 </ul>
 ]]></content>
     </entry>
@@ -88,8 +113,7 @@
 <blockquote>
 <p>执行流程：<br>1.View与用户交互，将动作传递给Controller<br>2.Controller调用Model进行数据请求<br>3.服务端返回处理结果后，Model通知View<br>4.View进行画面处理</p>
 </blockquote>
-<p> 缺点：Controller不知道任何View的细节，一个Controller能被多个View使用，很难对Controller进行单元测试，Controller操作数据，但是如何从View上断言这些数据的变化呢？</p>
-<p><img src="/images/浅谈设计模式/MVC.png" alt="MVC" title="MVC"></p>
+<p> 缺点：Controller不知道任何View的细节，一个Controller能被多个View使用，很难对Controller进行单元测试，Controller操作数据，但是如何从View上断言这些数据的变化呢？<br>​<br>​    <a id="more"></a><br><img src="/images/浅谈设计模式/MVC.png" alt="MVC" title="MVC"></p>
 <h1 id="2-MVP"><a href="#2-MVP" class="headerlink" title="2.MVP:"></a>2.MVP:</h1><p>MVP模式中将Controller 替换为Presenter，彻底的分离了View 与Model 的关联。Presenter 做业务逻辑，View 与 Model 不发生联系，都通过 Presenter 传递。</p>
 <blockquote>
 <p>执行流程<br>1.View与用户交互，将动作转交给Presenter。<br>2.Presenter操作Model进行数据请求。<br>3.Model通知Presenter数据变化。<br>4.Presenter更新View的变化。</p>

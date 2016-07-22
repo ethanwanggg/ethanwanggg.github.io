@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://ethanwanggg.github.io/images/浅谈设计模式/MVC.png">
 <meta property="og:image" content="http://ethanwanggg.github.io/images/浅谈设计模式/MVP.png">
 <meta property="og:image" content="http://ethanwanggg.github.io/images/浅谈设计模式/MVVM.png">
-<meta property="og:updated_time" content="2016-06-16T07:26:04.000Z">
+<meta property="og:updated_time" content="2016-07-21T09:58:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈设计模式">
 <meta name="twitter:description" content="从学习软件开发开始，我们一直在讨论的就是程序设计模式。常用的有MVC 、MVP 、MVVM ，今天想把这几个模式拿出来说一说。
@@ -374,8 +374,7 @@
 <blockquote>
 <p>执行流程：<br>1.View与用户交互，将动作传递给Controller<br>2.Controller调用Model进行数据请求<br>3.服务端返回处理结果后，Model通知View<br>4.View进行画面处理</p>
 </blockquote>
-<p> 缺点：Controller不知道任何View的细节，一个Controller能被多个View使用，很难对Controller进行单元测试，Controller操作数据，但是如何从View上断言这些数据的变化呢？</p>
-<p><img src="/images/浅谈设计模式/MVC.png" alt="MVC" title="MVC"></p>
+<p> 缺点：Controller不知道任何View的细节，一个Controller能被多个View使用，很难对Controller进行单元测试，Controller操作数据，但是如何从View上断言这些数据的变化呢？<br>​<br>​    <a id="more"></a><br><img src="/images/浅谈设计模式/MVC.png" alt="MVC" title="MVC"></p>
 <h1 id="2-MVP"><a href="#2-MVP" class="headerlink" title="2.MVP:"></a>2.MVP:</h1><p>MVP模式中将Controller 替换为Presenter，彻底的分离了View 与Model 的关联。Presenter 做业务逻辑，View 与 Model 不发生联系，都通过 Presenter 传递。</p>
 <blockquote>
 <p>执行流程<br>1.View与用户交互，将动作转交给Presenter。<br>2.Presenter操作Model进行数据请求。<br>3.Model通知Presenter数据变化。<br>4.Presenter更新View的变化。</p>
